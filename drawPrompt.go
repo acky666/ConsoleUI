@@ -7,7 +7,7 @@ import (
     "github.com/eiannone/keyboard"
 )
 
-func drawPromptIntial(myStyle main.Style, x int, y int, items []string) {
+func drawPromptIntial(myStyle Style, x int, y int, items []string) {
     MoveTo(x, y)
     SelectedItem := 0
 
@@ -65,7 +65,7 @@ func drawPromptIntial(myStyle main.Style, x int, y int, items []string) {
     Out(myStyle.BottomRight)
 }
 
-func drawPromptUpdate(myStyle main.Style, SelectedItem int, x int, y int, items []string) {
+func drawPromptUpdate(myStyle Style, SelectedItem int, x int, y int, items []string) {
 
     maxLength := 1
     newY := y + 1 + myStyle.SpaceHeader
@@ -98,7 +98,7 @@ func drawPromptUpdate(myStyle main.Style, SelectedItem int, x int, y int, items 
 
 func DrawPrompt(title string, style string, x int, y int, items []string) string {
 
-    myStyle := console.getStyle(style)
+    myStyle := getStyle(style)
     myStyle.HeaderText = title
 
     drawPromptIntial(myStyle, x, y, items)
