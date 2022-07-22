@@ -33,7 +33,7 @@ func getStyle(style string) Style {
             HeaderText:    "",
             TextNormal:    "[F-WHITE][B-BLACK]",
             TextHighLight: "[B-WHITE][F-BLACK]",
-            Legend:        "[B-WHITE][F-GREEN]",
+            Legend:        "[B-BLACK][F-GREEN]",
         }
     }
 
