@@ -2,11 +2,11 @@ package ConsoleUI
 
 // See https://github.com/da0x/olog/blob/main/style.go
 
-func getStyle(style string) main.Style {
+func getStyle(style string) Style {
 
     switch style {
     case "blue":
-        return main.Style{
+        return Style{
             TopLeft: "[B-BLUE][F-WHITE]╔", TopCenter: "═", TopRight: "╗",
             MiddleLeft:  "[B-BLUE][F-WHITE]║",
             MiddleRight: "[B-BLUE][F-WHITE]║",
@@ -21,7 +21,7 @@ func getStyle(style string) main.Style {
             Legend:        "[B-BLUE][F-GREEN]",
         }
     default:
-        return main.Style{
+        return Style{
             TopLeft: "[F-WHITE][B-BLACK]┌", TopCenter: "─", TopRight: "┐",
             MiddleLeft:  "[F-WHITE][B-BLACK]│",
             MiddleRight: "[F-WHITE][B-BLACK]│",

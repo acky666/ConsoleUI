@@ -8,7 +8,7 @@ import (
 )
 
 func drawPromptIntial(myStyle main.Style, x int, y int, items []string) {
-    console.MoveTo(x, y)
+    MoveTo(x, y)
     SelectedItem := 0
 
     // Go through all the Items and find the max length
@@ -21,19 +21,19 @@ func drawPromptIntial(myStyle main.Style, x int, y int, items []string) {
     }
 
     // Draw a Box Starting at X, Y with the MaxLength
-    console.Out(myStyle.TopLeft)
-    console.Out(myStyle.HeaderText)
-    console.Out(strings.Repeat(myStyle.TopCenter, (len(myStyle.Gap)*2)+maxLength-(len(myStyle.HeaderText))))
-    console.Out(myStyle.TopRight)
+    Out(myStyle.TopLeft)
+    Out(myStyle.HeaderText)
+    Out(strings.Repeat(myStyle.TopCenter, (len(myStyle.Gap)*2)+maxLength-(len(myStyle.HeaderText))))
+    Out(myStyle.TopRight)
 
     for i := 1; i <= myStyle.SpaceHeader; i++ {
-        console.MoveTo(x, y+i)
-        console.Out(myStyle.MiddleLeft + myStyle.Gap + strings.Repeat(" ", maxLength) + myStyle.Gap + myStyle.MiddleRight)
+        MoveTo(x, y+i)
+        Out(myStyle.MiddleLeft + myStyle.Gap + strings.Repeat(" ", maxLength) + myStyle.Gap + myStyle.MiddleRight)
     }
 
     newY := y + 1 + myStyle.SpaceHeader
 
-    console.MoveTo(x, newY)
+    MoveTo(x, newY)
 
     for i, item := range items {
 
@@ -47,22 +47,22 @@ func drawPromptIntial(myStyle main.Style, x int, y int, items []string) {
             item = myStyle.TextNormal + item
         }
 
-        console.Out(myStyle.MiddleLeft + myStyle.Gap + item + myStyle.Gap + myStyle.MiddleRight)
+        Out(myStyle.MiddleLeft + myStyle.Gap + item + myStyle.Gap + myStyle.MiddleRight)
         newY++
-        console.MoveTo(x, newY)
+        MoveTo(x, newY)
     }
 
     for i := 1; i <= myStyle.SpaceFooter; i++ {
-        console.Out(myStyle.MiddleLeft + myStyle.Gap + strings.Repeat(" ", maxLength) + myStyle.Gap + myStyle.MiddleRight)
+        Out(myStyle.MiddleLeft + myStyle.Gap + strings.Repeat(" ", maxLength) + myStyle.Gap + myStyle.MiddleRight)
         newY++
         console.MoveTo(x, newY)
     }
 
-    console.Out(myStyle.BottomLeft)
-    console.Out(strings.Repeat(myStyle.TopCenter, (len(myStyle.Gap)*2)+maxLength-6))
-    console.Out(myStyle.Legend + "[ ↑↓ ]")
+    Out(myStyle.BottomLeft)
+    Out(strings.Repeat(myStyle.TopCenter, (len(myStyle.Gap)*2)+maxLength-6))
+    Out(myStyle.Legend + "[ ↑↓ ]")
 
-    console.Out(myStyle.BottomRight)
+    Out(myStyle.BottomRight)
 }
 
 func drawPromptUpdate(myStyle main.Style, SelectedItem int, x int, y int, items []string) {
@@ -76,7 +76,7 @@ func drawPromptUpdate(myStyle main.Style, SelectedItem int, x int, y int, items 
         }
     }
 
-    console.MoveTo(x, newY)
+    MoveTo(x, newY)
 
     for i, item := range items {
 
@@ -90,9 +90,9 @@ func drawPromptUpdate(myStyle main.Style, SelectedItem int, x int, y int, items 
             item = myStyle.TextNormal + item
         }
 
-        console.Out(myStyle.MiddleLeft + myStyle.Gap + item + myStyle.Gap + myStyle.MiddleRight)
+        Out(myStyle.MiddleLeft + myStyle.Gap + item + myStyle.Gap + myStyle.MiddleRight)
         newY++
-        console.MoveTo(x, newY)
+        MoveTo(x, newY)
     }
 }
 
@@ -104,12 +104,12 @@ func DrawPrompt(title string, style string, x int, y int, items []string) string
     drawPromptIntial(myStyle, x, y, items)
     SelectedItem := 0
 
-    console.HideCursor()
-    defer console.Reset()
-    defer console.ShowCursor()
+    HideCursor()
+    defer Reset()
+    defer ShowCursor()
 
     for {
-        r, key := console.Get()
+        r, key := Get()
 
         for i, item := range items {
             rs := []rune(item)
