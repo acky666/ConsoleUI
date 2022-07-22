@@ -3,7 +3,6 @@ package ConsoleUI
 import (
     "strings"
 
-    "ConsoleUI/console"
     "github.com/eiannone/keyboard"
 )
 
@@ -55,7 +54,7 @@ func drawPromptIntial(myStyle Style, x int, y int, items []string) {
     for i := 1; i <= myStyle.SpaceFooter; i++ {
         Out(myStyle.MiddleLeft + myStyle.Gap + strings.Repeat(" ", maxLength) + myStyle.Gap + myStyle.MiddleRight)
         newY++
-        console.MoveTo(x, newY)
+        MoveTo(x, newY)
     }
 
     Out(myStyle.BottomLeft)
