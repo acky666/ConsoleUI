@@ -1,4 +1,4 @@
-package main
+package ConsoleUI
 
 // See https://github.com/da0x/olog/blob/main/style.go
 

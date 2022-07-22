@@ -1,4 +1,4 @@
-package main
+package ConsoleUI
 
 var ColourMap = map[string]string{
     "F-BLACK":   "\033[1;30m",
