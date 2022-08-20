@@ -120,14 +120,14 @@ func DrawPrompt(title string, style string, x int, y int, items []string) string
         if key == keyboard.KeyArrowDown {
             SelectedItem++
             if SelectedItem > len(items)-1 {
-                SelectedItem = len(items) - 1
+                SelectedItem = 0
             }
         }
 
         if key == keyboard.KeyArrowUp {
             SelectedItem--
             if SelectedItem < 0 {
-                SelectedItem = 0
+                SelectedItem = len(items) - 1
             }
         }
 
