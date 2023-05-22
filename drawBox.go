@@ -1,5 +1,5 @@
 package ConsoleUI
 
-func drawBox() {
+func drawBox(x int, y int, w int, h int, style string) {
 
 }
