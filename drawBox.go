@@ -4,6 +4,8 @@ import "strings"
 
 func DrawBox(x int, y int, w int, h int, style string) {
     
+    myStyle := getStyle(style)
+    
     MoveTo(x, y)
     
     // Go through all the Items and find the max length
