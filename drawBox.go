@@ -8,7 +8,6 @@ func DrawBox(x int, y int, w int, h int, style string) {
     
     MoveTo(x, y)
     
-    // Go through all the Items and find the max length
     maxLength := 1
     
     // Draw a Box Starting at X, Y with the MaxLength
