@@ -6,7 +6,7 @@ func DrawBox(x int, y int, w int, h int, style string) {
     
     MoveTo(x, y)
     
-    maxLength := 1
+    // maxLength := 1
     
     // Draw a Box Starting at X, Y with the MaxLength
     // Out(myStyle.TopLeft)
